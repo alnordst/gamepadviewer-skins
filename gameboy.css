@@ -4,13 +4,6 @@
     margin-left: -400px;
     margin-top: -150px;
 }
-.custom.disconnected {
-    opaciy: 0
-}
-/* This hides the controller's button when disconnected so only the background image remains */ 
-.custom.disconnected div {
-    display: none;
-}
 
 /* This is to size and position the containing div for the 
 start and select buttons. */
