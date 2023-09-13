@@ -1,0 +1,193 @@
+.controller.custom{
+    width: 800px;
+    height: 300px;
+    margin-left: -400px;
+    margin-top: -150px;
+}
+.custom.disconnected {
+    opaciy: 0
+}
+/* This hides the controller's button when disconnected so only the background image remains */ 
+.custom.disconnected div {
+    display: none;
+}
+
+/* This is to size and position the containing div for the 
+start and select buttons. */
+.custom .arrows{
+    position: absolute;
+    width: 200px;
+    height: 36px;
+    bottom: 40px;
+    left: 300px;
+}
+/* Setting the size and CSS sprite for the start and select buttons */
+.custom .back, .custom .start{
+    border: none;
+    border-radius: 18px;
+    height: 36px;
+    width: 90px;
+    background-color: #222;
+}
+.custom .back.pressed, .custom .start.pressed{
+    background-color: #ddd;
+}
+.custom .back{
+    float: left;
+}
+.custom .start{
+    float: right;
+}
+/* Positioning and size of the container for the face buttons */
+.custom .abxy{
+    position: absolute;
+    width: 260px;
+    height: 160px;
+    top: 60px;
+    right: 20px;
+}
+/* base class used to simplify the sprite mapping */
+.custom .button{
+    position: absolute;
+    width:120px;
+    height:120px;
+    border-radius: 100%;
+    background-color: #222;
+}
+.custom .button.pressed{
+    background-color: #ddd
+}
+.custom .a{
+    bottom: 0px;
+    left: 0;
+}
+.custom .a::before {
+    content: '';
+    color: #888;
+    font-size: 50px;
+    position: absolute;
+    left: 35px;
+    top: 22px;
+}
+.custom .b{
+    top: 0px;
+    right: 0px;
+}
+.custom .b::before {
+    content: '';
+    color: #888;
+    font-size: 50px;
+    position: absolute;
+    left: 35px;
+    top: 22px;
+}
+.custom .x{
+    display: none;
+}
+.custom .y{
+    display: none;
+}
+/* Dpad possitioning and sizing */
+.custom .dpad{
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    top: 20px;
+    left: 20px;
+}
+.custom .face{
+    position: absolute;
+    background-color: #222
+}
+.custom .face.up, .custom .face.down{
+    width: 80px;
+    height: 90px;
+    left: 90px;
+}
+.custom .face.left, .custom .face.right{
+    width: 90px;
+    height: 80px;
+    top: 90px;
+}
+.custom .face.up{
+    top: 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.custom .face:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.custom .face.up:before {
+    top: 100%;
+    left: 0;
+    border-left: 40px solid transparent;
+    border-top: 40px solid #222;
+    border-right: 40px solid transparent;
+}
+
+.custom .face.up.pressed:before {
+    border-top: 40px solid #ddd;
+}
+
+.custom .face.down:before {
+    bottom: 100%;
+    left: 0;
+    border-left: 40px solid transparent;
+    border-bottom: 40px solid #222;
+    border-right: 40px solid transparent;
+}
+
+.custom .face.down.pressed:before {
+    border-bottom: 40px solid #ddd;
+}
+
+.custom .face.left:before {
+    top: 0;
+    left: 100%;
+    border-top: 40px solid transparent;
+    border-left: 40px solid #222;
+    border-bottom: 40px solid transparent;
+}
+
+.custom .face.left.pressed:before {
+    border-left: 40px solid #ddd;
+}
+
+.custom .face.right:before {
+    top: 0;
+    right: 100%;
+    border-top: 40px solid transparent;
+    border-right: 40px solid #222;
+    border-bottom: 40px solid transparent;
+}
+
+.custom .face.right.pressed:before {
+    border-right: 40px solid #ddd;
+}
+
+.custom .face.down{
+    bottom: 0;
+    border-radius: 0 0 10px 10px;
+}
+.custom .face.left{
+    left: 0;
+    border-radius: 10px 0 0 10px;
+}
+.custom .face.right{
+    right: 0px;
+    border-radius: 0 10px 10px 0;
+}
+.custom .face.pressed{
+    background-color: #ddd;
+}
+/* NOTE: You NEED to set this to exactly half the height of what is listed 
+for '.controller.custom' so when your skin is activated via player selection
+parameters (e.g. http://mrmcpowned.com/gamepad?p=1) it will be correctly
+centered on screen. */
+.custom.half{
+    margin-top: -150px;
+}
