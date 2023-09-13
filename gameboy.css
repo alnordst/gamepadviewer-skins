@@ -27,7 +27,7 @@ start and select buttons. */
     border-radius: 18px;
     height: 36px;
     width: 90px;
-    background-color: #222;
+    background-color: #555;
 }
 .custom .back.pressed, .custom .start.pressed{
     background-color: #ddd;
@@ -52,7 +52,7 @@ start and select buttons. */
     width:120px;
     height:120px;
     border-radius: 100%;
-    background-color: #222;
+    background-color: #555;
 }
 .custom .button.pressed{
     background-color: #ddd
@@ -97,7 +97,7 @@ start and select buttons. */
 }
 .custom .face{
     position: absolute;
-    background-color: #222
+    background-color: #555
 }
 .custom .face.up, .custom .face.down{
     width: 80px;
@@ -125,7 +125,7 @@ start and select buttons. */
     top: 100%;
     left: 0;
     border-left: 40px solid transparent;
-    border-top: 40px solid #222;
+    border-top: 40px solid #555;
     border-right: 40px solid transparent;
 }
 
@@ -137,7 +137,7 @@ start and select buttons. */
     bottom: 100%;
     left: 0;
     border-left: 40px solid transparent;
-    border-bottom: 40px solid #222;
+    border-bottom: 40px solid #555;
     border-right: 40px solid transparent;
 }
 
@@ -149,7 +149,7 @@ start and select buttons. */
     top: 0;
     left: 100%;
     border-top: 40px solid transparent;
-    border-left: 40px solid #222;
+    border-left: 40px solid #555;
     border-bottom: 40px solid transparent;
 }
 
@@ -161,7 +161,7 @@ start and select buttons. */
     top: 0;
     right: 100%;
     border-top: 40px solid transparent;
-    border-right: 40px solid #222;
+    border-right: 40px solid #555;
     border-bottom: 40px solid transparent;
 }
 
