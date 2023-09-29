@@ -14,8 +14,7 @@
     height: var(--height);
 }
 
-/* This is to size and position the containing div for the 
-start and select buttons. */
+/* Start, Select */
 .custom .arrows{
     position: absolute;
     width: 200px;
@@ -23,7 +22,6 @@ start and select buttons. */
     bottom: 40px;
     left: 300px;
 }
-/* Setting the size and CSS sprite for the start and select buttons */
 .custom .back, .custom .start{
     border: none;
     border-radius: 18px;
@@ -40,7 +38,8 @@ start and select buttons. */
 .custom .start{
     float: right;
 }
-/* Positioning and size of the container for the face buttons */
+
+/* Face buttons */
 .custom .abxy{
     position: absolute;
     width: 260px;
@@ -48,7 +47,6 @@ start and select buttons. */
     top: 60px;
     right: 20px;
 }
-/* base class used to simplify the sprite mapping */
 .custom .button{
     position: absolute;
     width:var(--button-size);
@@ -60,36 +58,18 @@ start and select buttons. */
     background-color: var(--pressed)
 }
 .custom .a{
-    bottom: 0px;
+    bottom: 0;
     left: 0;
 }
-.custom .a::before {
-    content: '';
-    color: #888;
-    font-size: 50px;
-    position: absolute;
-    left: 35px;
-    top: 22px;
-}
 .custom .b{
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
 }
-.custom .b::before {
-    content: '';
-    color: #888;
-    font-size: 50px;
-    position: absolute;
-    left: 35px;
-    top: 22px;
-}
-.custom .x{
+.custom .x, .custom .y{
     display: none;
 }
-.custom .y{
-    display: none;
-}
-/* Dpad possitioning and sizing */
+
+/* D-pad */
 .custom .dpad{
     position: absolute;
     width: calc(calc(var(--dpad-length) * 2) + var(--dpad-width));
@@ -111,14 +91,12 @@ start and select buttons. */
     height: var(--dpad-width);
     top: var(--dpad-length);
 }
-
 .custom .face:before {
     content: '';
     position: absolute;
     width: 0;
     height: 0;
 }
-
 .custom .face.up:before {
     top: 100%;
     left: 0;
@@ -126,11 +104,9 @@ start and select buttons. */
     border-top: calc(var(--dpad-width) / 2) solid var(--unpressed);
     border-right: calc(var(--dpad-width) / 2) solid transparent;
 }
-
 .custom .face.up.pressed:before {
     border-top: calc(var(--dpad-width) / 2) solid var(--pressed);
 }
-
 .custom .face.down:before {
     bottom: 100%;
     left: 0;
@@ -138,11 +114,9 @@ start and select buttons. */
     border-bottom: calc(var(--dpad-width) / 2) solid var(--unpressed);
     border-right: calc(var(--dpad-width) / 2) solid transparent;
 }
-
 .custom .face.down.pressed:before {
     border-bottom: calc(var(--dpad-width) / 2) solid var(--pressed);
 }
-
 .custom .face.left:before {
     top: 0;
     left: 100%;
@@ -150,11 +124,9 @@ start and select buttons. */
     border-left: calc(var(--dpad-width) / 2) solid var(--unpressed);
     border-bottom: calc(var(--dpad-width) / 2) solid transparent;
 }
-
 .custom .face.left.pressed:before {
     border-left: calc(var(--dpad-width) / 2) solid var(--pressed);
 }
-
 .custom .face.right:before {
     top: 0;
     right: 100%;
@@ -162,16 +134,13 @@ start and select buttons. */
     border-right: calc(var(--dpad-width) / 2) solid var(--unpressed);
     border-bottom: calc(var(--dpad-width) / 2) solid transparent;
 }
-
 .custom .face.right.pressed:before {
     border-right: calc(var(--dpad-width) / 2) solid var(--pressed);
 }
-
 .custom .face.up{
     top: 0;
     border-radius: var(--dpad-border-radius) var(--dpad-border-radius) 0 0;
 }
-
 .custom .face.down{
     bottom: 0;
     border-radius: 0 0 var(--dpad-border-radius) var(--dpad-border-radius);
@@ -181,7 +150,7 @@ start and select buttons. */
     border-radius: var(--dpad-border-radius) 0 0 var(--dpad-border-radius);
 }
 .custom .face.right{
-    right: 0px;
+    right: 0;
     border-radius: 0 var(--dpad-border-radius) var(--dpad-border-radius) 0;
 }
 .custom .face.pressed{
