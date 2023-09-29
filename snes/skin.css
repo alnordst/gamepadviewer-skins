@@ -33,11 +33,11 @@
 }
 .custom .trigger-button.left, .custom .bumper.left{
     float: left;
-    border-radius: var(--bumper-height) 0 0 0;
+    border-radius: var(--bumper-height) 5px 5px 5px;
 }
 .custom .trigger-button.right, .custom .bumper.right{
     float: right;
-    border-radius: 0 var(--bumper-height) 0 0;
+    border-radius: 5px var(--bumper-height) 5px 5px;
 }
 .custom .trigger-button.pressed, .custom .bumper.pressed{
     background-color: var(--pressed);
