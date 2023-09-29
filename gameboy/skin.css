@@ -24,7 +24,6 @@
     left: 300px;
 }
 .custom .back, .custom .start{
-    border: none;
     border-radius: 18px;
     height: 100%;
     width: 90px;
@@ -92,50 +91,50 @@
     height: var(--dpad-width);
     top: var(--dpad-length);
 }
-.custom .face:before {
+.custom .face:before{
     content: '';
     position: absolute;
     width: 0;
     height: 0;
 }
-.custom .face.up:before {
+.custom .face.up:before{
     top: 100%;
     left: 0;
     border-left: calc(var(--dpad-width) / 2) solid transparent;
     border-top: calc(var(--dpad-width) / 2) solid var(--unpressed);
     border-right: calc(var(--dpad-width) / 2) solid transparent;
 }
-.custom .face.up.pressed:before {
+.custom .face.up.pressed:before{
     border-top: calc(var(--dpad-width) / 2) solid var(--pressed);
 }
-.custom .face.down:before {
+.custom .face.down:before{
     bottom: 100%;
     left: 0;
     border-left: calc(var(--dpad-width) / 2) solid transparent;
     border-bottom: calc(var(--dpad-width) / 2) solid var(--unpressed);
     border-right: calc(var(--dpad-width) / 2) solid transparent;
 }
-.custom .face.down.pressed:before {
+.custom .face.down.pressed:before{
     border-bottom: calc(var(--dpad-width) / 2) solid var(--pressed);
 }
-.custom .face.left:before {
+.custom .face.left:before{
     top: 0;
     left: 100%;
     border-top: calc(var(--dpad-width) / 2) solid transparent;
     border-left: calc(var(--dpad-width) / 2) solid var(--unpressed);
     border-bottom: calc(var(--dpad-width) / 2) solid transparent;
 }
-.custom .face.left.pressed:before {
+.custom .face.left.pressed:before{
     border-left: calc(var(--dpad-width) / 2) solid var(--pressed);
 }
-.custom .face.right:before {
+.custom .face.right:before{
     top: 0;
     right: 100%;
     border-top: calc(var(--dpad-width) / 2) solid transparent;
     border-right: calc(var(--dpad-width) / 2) solid var(--unpressed);
     border-bottom: calc(var(--dpad-width) / 2) solid transparent;
 }
-.custom .face.right.pressed:before {
+.custom .face.right.pressed:before{
     border-right: calc(var(--dpad-width) / 2) solid var(--pressed);
 }
 .custom .face.up{
