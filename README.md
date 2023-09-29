@@ -1,7 +1,12 @@
-# gamepadviewer-skins
-## 8BitDo Pro 2
-<img src="https://repo.ggtylerr.dev/img/8bitdo-pro-2.gif" width="600pt" alt="Preview of skin"/>
+# Minimalist Gamepad Viewer Skins
+For use with [gamepadviewer.com](https://gamepadviewer.com/)
 
-Edit of [azzco's 8BitDo SN30 Pro+ skin.](https://github.com/azzco/gamepadviewer-skins)
+## Gameboy
+https://gamepadviewer.com/?p=1&css=https://gpv.3and3.dev/gameboy/skin.css
 
-Load using `?css=https://repo.ggtylerr.dev/8bitdo-pro-2/loadthis.css` on [this website.](https://gamepadviewer.com/?css=https://repo.ggtylerr.dev/8bitdo-pro-2/loadthis.css)
+<img src="gameboy/sample.png" width="600pt" alt="preview of skin"/>
+
+## Super Nintendo
+https://gamepadviewer.com/?p=1&css=https://gpv.3and3.dev/snes/skin.css
+
+<img src="snes/sample.png" width="600pt" alt="preview of skin"/>

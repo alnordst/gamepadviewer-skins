@@ -1,8 +1,17 @@
+:root{
+    --width: 800px;
+    --height: 300px;
+    --unpressed: #555;
+    --pressed: #ddd;
+    --button-size: 120px;
+    --dpad-length: 90px;
+    --dpad-width: 80px;
+    --dpad-border-radius: 10px;
+}
+
 .controller.custom{
-    width: 800px;
-    height: 300px;
-    margin-left: -400px;
-    margin-top: -150px;
+    width: var(--width);
+    height: var(--height);
 }
 
 /* This is to size and position the containing div for the 
@@ -18,12 +27,12 @@ start and select buttons. */
 .custom .back, .custom .start{
     border: none;
     border-radius: 18px;
-    height: 36px;
+    height: 100%;
     width: 90px;
-    background-color: #555;
+    background-color: var(--unpressed);
 }
 .custom .back.pressed, .custom .start.pressed{
-    background-color: #ddd;
+    background-color: var(--pressed);
 }
 .custom .back{
     float: left;
@@ -42,13 +51,13 @@ start and select buttons. */
 /* base class used to simplify the sprite mapping */
 .custom .button{
     position: absolute;
-    width:120px;
-    height:120px;
+    width:var(--button-size);
+    height:var(--button-size);
     border-radius: 100%;
-    background-color: #555;
+    background-color: var(--unpressed);
 }
 .custom .button.pressed{
-    background-color: #ddd
+    background-color: var(--pressed)
 }
 .custom .a{
     bottom: 0px;
@@ -83,28 +92,24 @@ start and select buttons. */
 /* Dpad possitioning and sizing */
 .custom .dpad{
     position: absolute;
-    width: 260px;
-    height: 260px;
+    width: calc(calc(var(--dpad-length) * 2) + var(--dpad-width));
+    height: calc(calc(var(--dpad-length) * 2) + var(--dpad-width));
     top: 20px;
     left: 20px;
 }
 .custom .face{
     position: absolute;
-    background-color: #555
+    background-color: var(--unpressed)
 }
 .custom .face.up, .custom .face.down{
-    width: 80px;
-    height: 90px;
-    left: 90px;
+    width: var(--dpad-width);
+    height: var(--dpad-length);
+    left: var(--dpad-length);
 }
 .custom .face.left, .custom .face.right{
-    width: 90px;
-    height: 80px;
-    top: 90px;
-}
-.custom .face.up{
-    top: 0;
-    border-radius: 10px 10px 0 0;
+    width: var(--dpad-length);
+    height: var(--dpad-width);
+    top: var(--dpad-length);
 }
 
 .custom .face:before {
@@ -117,70 +122,68 @@ start and select buttons. */
 .custom .face.up:before {
     top: 100%;
     left: 0;
-    border-left: 40px solid transparent;
-    border-top: 40px solid #555;
-    border-right: 40px solid transparent;
+    border-left: calc(var(--dpad-width) / 2) solid transparent;
+    border-top: calc(var(--dpad-width) / 2) solid var(--unpressed);
+    border-right: calc(var(--dpad-width) / 2) solid transparent;
 }
 
 .custom .face.up.pressed:before {
-    border-top: 40px solid #ddd;
+    border-top: calc(var(--dpad-width) / 2) solid var(--pressed);
 }
 
 .custom .face.down:before {
     bottom: 100%;
     left: 0;
-    border-left: 40px solid transparent;
-    border-bottom: 40px solid #555;
-    border-right: 40px solid transparent;
+    border-left: calc(var(--dpad-width) / 2) solid transparent;
+    border-bottom: calc(var(--dpad-width) / 2) solid var(--unpressed);
+    border-right: calc(var(--dpad-width) / 2) solid transparent;
 }
 
 .custom .face.down.pressed:before {
-    border-bottom: 40px solid #ddd;
+    border-bottom: calc(var(--dpad-width) / 2) solid var(--pressed);
 }
 
 .custom .face.left:before {
     top: 0;
     left: 100%;
-    border-top: 40px solid transparent;
-    border-left: 40px solid #555;
-    border-bottom: 40px solid transparent;
+    border-top: calc(var(--dpad-width) / 2) solid transparent;
+    border-left: calc(var(--dpad-width) / 2) solid var(--unpressed);
+    border-bottom: calc(var(--dpad-width) / 2) solid transparent;
 }
 
 .custom .face.left.pressed:before {
-    border-left: 40px solid #ddd;
+    border-left: calc(var(--dpad-width) / 2) solid var(--pressed);
 }
 
 .custom .face.right:before {
     top: 0;
     right: 100%;
-    border-top: 40px solid transparent;
-    border-right: 40px solid #555;
-    border-bottom: 40px solid transparent;
+    border-top: calc(var(--dpad-width) / 2) solid transparent;
+    border-right: calc(var(--dpad-width) / 2) solid var(--unpressed);
+    border-bottom: calc(var(--dpad-width) / 2) solid transparent;
 }
 
 .custom .face.right.pressed:before {
-    border-right: 40px solid #ddd;
+    border-right: calc(var(--dpad-width) / 2) solid var(--pressed);
+}
+
+.custom .face.up{
+    top: 0;
+    border-radius: var(--dpad-border-radius) var(--dpad-border-radius) 0 0;
 }
 
 .custom .face.down{
     bottom: 0;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 var(--dpad-border-radius) var(--dpad-border-radius);
 }
 .custom .face.left{
     left: 0;
-    border-radius: 10px 0 0 10px;
+    border-radius: var(--dpad-border-radius) 0 0 var(--dpad-border-radius);
 }
 .custom .face.right{
     right: 0px;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 var(--dpad-border-radius) var(--dpad-border-radius) 0;
 }
 .custom .face.pressed{
-    background-color: #ddd;
-}
-/* NOTE: You NEED to set this to exactly half the height of what is listed 
-for '.controller.custom' so when your skin is activated via player selection
-parameters (e.g. http://mrmcpowned.com/gamepad?p=1) it will be correctly
-centered on screen. */
-.custom.half{
-    margin-top: -150px;
+    background-color: var(--pressed);
 }
