@@ -2,9 +2,9 @@
 For use with [gamepadviewer.com](https://gamepadviewer.com/)
 
 ## Gameboy
-https://gamepadviewer.com/?p=1&css=https://gpv.3and3.dev/gameboy/skin.css
+https://gamepadviewer.com/?p=1&css=https://gpv.3and3.dev/gb/skin.css
 
-<img src="gameboy/sample.png" width="600pt" alt="preview of gameboy skin"/>
+<img src="gb/sample.png" width="600pt" alt="preview of gameboy skin"/>
 
 ## Super Nintendo
 https://gamepadviewer.com/?p=1&css=https://gpv.3and3.dev/snes/skin.css
