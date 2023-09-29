@@ -1,81 +1,55 @@
+:root{
+    --width: 800px;
+    --height: 360px;
+    --padding: 20px;
+    --unpressed: #555;
+    --pressed: #ddd;
+    --bumper-width: 260px;
+    --bumper-height: 30px;
+    --button-size: 90px;
+    --button-gap: 80px;
+    --dpad-length: 90px;
+    --dpad-width: 80px;
+    --dpad-border-radius: 10px;
+}
+
 .controller.custom{
-    width: 800px;
-    height: 360px;
-    margin-left: -400px;
-    margin-top: -150px;
+    width: var(--width);
+    height: var(--height);
 }
 
-.custom .triggers{ /* The triggers are housed inside a div, so this sizes the div properly and positions it */
-    width: 760px;
-    height: 30px;
+/* Shoulder buttons (overlap for increased compatibility) */
+.custom .triggers, .custom .bumpers{ 
+    width: calc(var(--width) - calc(var(--padding) * 2));
+    height: var(--bumper-height);
     position: absolute;
-    left: 20px;
-    top: 20px;
-    border-radius: 0 30px 0 0;
+    left: var(--padding);
+    top: var(--padding);
 }
-
-.custom .trigger-button.left{/* These are the actual triggers themselves */
+.custom .trigger-button, .custom .bumper{
+    width: var(--bumper-width);
+    height: var(--bumper-height);
+    background-color: var(--unpressed);
+}
+.custom .trigger-button.left, .custom .bumper.left{
     float: left;
-    width:260px;
-    height:30px;
-    border-radius: 30px 0 0 0;
-    background-color: #555;
+    border-radius: var(--bumper-height) 0 0 0;
 }
-
-.custom .trigger-button.left.pressed {
-    background-color: #ddd;
-}
-
-.custom .trigger-button.right{/* These are the actual triggers themselves */
+.custom .trigger-button.right, .custom .bumper.right{
     float: right;
-    width:260px;
-    height:30px;
-    border-radius: 0 30px 0 0;
-    background-color: #555;
+    border-radius: 0 var(--bumper-height) 0 0;
 }
-
-.custom .trigger-button.right.pressed {
-    background-color: #ddd;
+.custom .trigger-button.pressed, .custom .bumper.pressed{
+    background-color: var(--pressed);
 }
-
-.custom .bumpers{
-    width: 760px;
-    height: 30px;
-    position: absolute;
-    left: 20px;
-    top: 20px;
-}
-
-.custom .bumper.left{
-    float: left;
-    width: 260px;
-    height:30px;
-    border-radius: 30px 0 0 0;
-    background-color: #555;
+.custom .bumper{
     opacity: 0;
 }
-
-.custom .bumper.left.pressed{
-    background-color: #ddd;
+.custom .bumper.pressed{
     opacity: 1;
 }
 
-.custom .bumper.right{
-    float: right;
-    width: 260px;
-    height:30px;
-    border-radius: 0 30px 0 0;
-    background-color: #555;
-    opacity: 0;
-}
-
-.custom .bumper.right.pressed{
-    background-color: #ddd;
-    opacity: 1;
-}
-
-/* This is to size and position the containing div for the 
-start and select buttons. */
+/* Start and select */
 .custom .arrows{
     position: absolute;
     width: 200px;
@@ -83,17 +57,15 @@ start and select buttons. */
     bottom: 40px;
     left: 300px;
 }
-/* Setting the size and CSS sprite for the start and select buttons */
 .custom .back, .custom .start{
-    border: none;
     border-radius: 18px;
-    height: 36px;
+    height: 100%;
     width: 90px;
-    background-color: #555;
+    background-color: var(--unpressed);
     rotate: -35deg;
 }
 .custom .back.pressed, .custom .start.pressed{
-    background-color: #ddd;
+    background-color: var(--pressed);
 }
 .custom .back{
     float: left;
@@ -101,142 +73,126 @@ start and select buttons. */
 .custom .start{
     float: right;
 }
-/* Positioning and size of the container for the face buttons */
+
+/* Face buttons */
 .custom .abxy{
     position: absolute;
-    width: 260px;
-    height: 260px;
-    bottom: 20px;
-    right: 20px;
+    width: calc(calc(var(--button-size) * 2) + var(--button-gap));
+    height: calc(calc(var(--button-size) * 2) + var(--button-gap));
+    bottom: var(--padding);
+    right: var(--padding);
 }
-/* base class used to simplify the sprite mapping */
 .custom .button{
     position: absolute;
-    width:90px;
-    height:90px;
+    width: var(--button-size);
+    height: var(--button-size);
     border-radius: 100%;
-    background-color: #555;
+    background-color: var(--unpressed);
 }
 .custom .button.pressed{
-    background-color: #ddd
+    background-color: var(--pressed)
 }
 .custom .a{
     bottom: 0;
-    left: 85px;
+    left: calc(calc(var(--button-size) + var(--button-gap)) / 2);
 }
 .custom .b{
-    top: 85px;
+    top: calc(calc(var(--button-size) + var(--button-gap)) / 2);
     right: 0px;
 }
 .custom .x{
-    top: 85px;
+    top: calc(calc(var(--button-size) + var(--button-gap)) / 2);
     left: 0;
 }
 .custom .y{
-    left: 85px;
+    left: calc(calc(var(--button-size) + var(--button-gap)) / 2);
     top: 0;
 }
-/* Dpad possitioning and sizing */
+
+/* D-pad */
 .custom .dpad{
     position: absolute;
-    width: 260px;
-    height: 260px;
-    bottom: 20px;
-    left: 20px;
+    width: calc(calc(var(--dpad-length) * 2) + var(--dpad-width));
+    height: calc(calc(var(--dpad-length) * 2) + var(--dpad-width));
+    bottom: var(--padding);
+    left: var(--padding);
 }
 .custom .face{
     position: absolute;
-    background-color: #555
+    background-color: var(--unpressed)
 }
 .custom .face.up, .custom .face.down{
-    width: 80px;
-    height: 90px;
-    left: 90px;
+    width: var(--dpad-width);
+    height: var(--dpad-length);
+    left: var(--dpad-length);
 }
 .custom .face.left, .custom .face.right{
-    width: 90px;
-    height: 80px;
-    top: 90px;
+    width: var(--dpad-length);
+    height: var(--dpad-width);
+    top: var(--dpad-length);
 }
-.custom .face.up{
-    top: 0;
-    border-radius: 10px 10px 0 0;
-}
-
-.custom .face:before {
+.custom .face:before{
     content: '';
     position: absolute;
     width: 0;
     height: 0;
 }
-
-.custom .face.up:before {
+.custom .face.up:before{
     top: 100%;
     left: 0;
-    border-left: 40px solid transparent;
-    border-top: 40px solid #555;
-    border-right: 40px solid transparent;
+    border-left: calc(var(--dpad-width) / 2) solid transparent;
+    border-top: calc(var(--dpad-width) / 2) solid var(--unpressed);
+    border-right: calc(var(--dpad-width) / 2) solid transparent;
 }
-
-.custom .face.up.pressed:before {
-    border-top: 40px solid #ddd;
+.custom .face.up.pressed:before{
+    border-top: calc(var(--dpad-width) / 2) solid var(--pressed);
 }
-
-.custom .face.down:before {
+.custom .face.down:before{
     bottom: 100%;
     left: 0;
-    border-left: 40px solid transparent;
-    border-bottom: 40px solid #555;
-    border-right: 40px solid transparent;
+    border-left: calc(var(--dpad-width) / 2) solid transparent;
+    border-bottom: calc(var(--dpad-width) / 2) solid var(--unpressed);
+    border-right: calc(var(--dpad-width) / 2) solid transparent;
 }
-
-.custom .face.down.pressed:before {
-    border-bottom: 40px solid #ddd;
+.custom .face.down.pressed:before{
+    border-bottom: calc(var(--dpad-width) / 2) solid var(--pressed);
 }
-
-.custom .face.left:before {
+.custom .face.left:before{
     top: 0;
     left: 100%;
-    border-top: 40px solid transparent;
-    border-left: 40px solid #555;
-    border-bottom: 40px solid transparent;
+    border-top: calc(var(--dpad-width) / 2) solid transparent;
+    border-left: calc(var(--dpad-width) / 2) solid var(--unpressed);
+    border-bottom: calc(var(--dpad-width) / 2) solid transparent;
 }
-
-.custom .face.left.pressed:before {
-    border-left: 40px solid #ddd;
+.custom .face.left.pressed:before{
+    border-left: calc(var(--dpad-width) / 2) solid var(--pressed);
 }
-
-.custom .face.right:before {
+.custom .face.right:before{
     top: 0;
     right: 100%;
-    border-top: 40px solid transparent;
-    border-right: 40px solid #555;
-    border-bottom: 40px solid transparent;
+    border-top: calc(var(--dpad-width) / 2) solid transparent;
+    border-right: calc(var(--dpad-width) / 2) solid var(--unpressed);
+    border-bottom: calc(var(--dpad-width) / 2) solid transparent;
 }
-
-.custom .face.right.pressed:before {
-    border-right: 40px solid #ddd;
+.custom .face.right.pressed:before{
+    border-right: calc(var(--dpad-width) / 2) solid var(--pressed);
 }
-
+.custom .face.up{
+    top: 0;
+    border-radius: var(--dpad-border-radius) var(--dpad-border-radius) 0 0;
+}
 .custom .face.down{
     bottom: 0;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 var(--dpad-border-radius) var(--dpad-border-radius);
 }
 .custom .face.left{
     left: 0;
-    border-radius: 10px 0 0 10px;
+    border-radius: var(--dpad-border-radius) 0 0 var(--dpad-border-radius);
 }
 .custom .face.right{
-    right: 0px;
-    border-radius: 0 10px 10px 0;
+    right: 0;
+    border-radius: 0 var(--dpad-border-radius) var(--dpad-border-radius) 0;
 }
 .custom .face.pressed{
-    background-color: #ddd;
-}
-/* NOTE: You NEED to set this to exactly half the height of what is listed 
-for '.controller.custom' so when your skin is activated via player selection
-parameters (e.g. http://mrmcpowned.com/gamepad?p=1) it will be correctly
-centered on screen. */
-.custom.half{
-    margin-top: -150px;
+    background-color: var(--pressed);
 }
